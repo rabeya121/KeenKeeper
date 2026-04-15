@@ -9,7 +9,7 @@ const FriendRightPanel = ({ friend }) => {
         (item) => item.friendId === friend.id
     );
 
-    // 🔥 Call / Text / Video handler
+    
     const handleAction = (type) => {
         const newEntry = {
             id: Date.now(),
@@ -19,7 +19,7 @@ const FriendRightPanel = ({ friend }) => {
             title: `${type} with ${friend.name}`
         };
 
-        addToTimeline(newEntry); // 🔥 IMPORTANT
+        addToTimeline(newEntry); 
         toast.success(`${type} with ${friend.name}`);
     };
 
@@ -29,7 +29,7 @@ const FriendRightPanel = ({ friend }) => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
 
-                {/* Days Since Contact */}
+                
                 <div className="bg-white p-5 rounded-xl shadow text-center">
                     <h2 className="text-2xl text-[#244D3F] font-bold">
                         {friend.days_since_contact}
@@ -39,7 +39,6 @@ const FriendRightPanel = ({ friend }) => {
                     </p>
                 </div>
 
-                {/* Goal */}
                 <div className="bg-white p-5 rounded-xl shadow text-center">
                     <h2 className="text-2xl text-[#244D3F] font-bold">
                         {friend.goal}
@@ -49,7 +48,6 @@ const FriendRightPanel = ({ friend }) => {
                     </p>
                 </div>
 
-                {/* Next Due Date */}
                 <div className="bg-white p-5 rounded-xl shadow text-center">
                     <h2 className="text-base text-[#244D3F] font-2xl font-bold">
                         {friend.next_due_date}
@@ -80,7 +78,7 @@ const FriendRightPanel = ({ friend }) => {
 
             </div>
 
-
+{/* ===================== Quick Check-In ===================== */}
             <div className="bg-white p-5 rounded-xl shadow">
 
                 <h3 className="text-sm font-semibold text-[#244D3F] uppercase mb-4">
@@ -89,7 +87,7 @@ const FriendRightPanel = ({ friend }) => {
 
                 <div className="grid grid-cols-3 gap-4">
 
-                    {/* CALL */}
+                    
                     <button
                         onClick={() => handleAction("Call")}
                         className="p-4 bg-gray-100 rounded-xl hover:bg-gray-200 transition flex flex-col items-center justify-center gap-2"
@@ -98,7 +96,6 @@ const FriendRightPanel = ({ friend }) => {
                         <span className="text-sm font-medium">Call</span>
                     </button>
 
-                    {/* TEXT */}
                     <button
                         onClick={() => handleAction("Text")}
                         className="p-4 bg-gray-100 rounded-xl hover:bg-gray-200 transition flex flex-col items-center justify-center gap-2"
@@ -107,7 +104,7 @@ const FriendRightPanel = ({ friend }) => {
                         <span className="text-sm font-medium">Text</span>
                     </button>
 
-                    {/* VIDEO */}
+                    
                     <button
                         onClick={() => handleAction("Video")}
                         className="p-4 bg-gray-100 rounded-xl hover:bg-gray-200 transition flex flex-col items-center justify-center gap-2"
@@ -119,7 +116,7 @@ const FriendRightPanel = ({ friend }) => {
                 </div>
             </div>
 
-            {/* ===================== MINI TIMELINE ===================== */}
+            {/* ===================== Recent Activity ===================== */}
             <div className="bg-white p-5 rounded-xl shadow">
 
                 <h3 className="text-sm font-semibold text-[#244D3F] uppercase mb-4">

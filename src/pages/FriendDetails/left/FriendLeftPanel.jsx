@@ -1,14 +1,10 @@
-import {
-    FiClock,
-    FiArchive,
-    FiTrash2
-} from "react-icons/fi";
+import {FiClock ,FiArchive ,FiTrash2} from "react-icons/fi";
 
 const FriendLeftPanel = ({ friend }) => {
     return (
         <div className="md:col-span-1 space-y-4 md:sticky md:top-6 self-start">
 
-            {/* Info Card */}
+            
             <div className="bg-white p-6 rounded-xl shadow text-center space-y-3">
 
                 <img
@@ -19,18 +15,17 @@ const FriendLeftPanel = ({ friend }) => {
 
                 <h2 className="text-lg font-semibold">{friend.name}</h2>
 
-                {/* Status */}
+                
                 <span className={`px-3 py-1 text-xs rounded-full ${
                     friend.status === "overdue"
                         ? "bg-red-500 text-white"
                         : friend.status === "almost due"
                             ? "bg-[#efad44] text-white"
-                            : "bg-[#244D3F] text-"
+                            : "bg-[#244D3F] text-white"
                 }`}>
                     {friend.status}
                 </span>
 
-                {/* Tags */}
                 <div className="flex flex-wrap justify-center gap-2 mt-2">
                     {friend.tags.map((tag, i) => (
                         <span
@@ -42,19 +37,18 @@ const FriendLeftPanel = ({ friend }) => {
                     ))}
                 </div>
 
-                {/* Bio */}
                 <p className="text-gray-500 text-sm italic">
                     {friend.bio}
                 </p>
 
-                {/* Email */}
+               
                 <p className="text-xs text-gray-400">
                     Preferred: {friend.email}
                 </p>
 
             </div>
 
-            {/* Action Buttons */}
+        
             <div className="space-y-2">
 
                 <button className="w-full flex items-center justify-center gap-2 py-2 bg-white rounded-lg shadow hover:shadow-md transition text-sm">
