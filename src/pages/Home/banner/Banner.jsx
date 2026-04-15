@@ -15,8 +15,8 @@ const Banner = () => {
           the relationships that matter most.
         </p>
 
-        {/* Button */}
-        <button className="btn btn-primary mt-6 gap-2 bg-[#244d3f] text-white border-none hover:bg-[#1f3f36]">
+        
+        <button className="btn btn-primary mt-6 gap-2 sm:w-auto bg-[#244d3f] text-white border-none hover:bg-[#1f3f36]">
           <FaPlus />
           Add a Friend
         </button>
