@@ -1,28 +1,22 @@
-import InfoCard from "./InfoCard";
-import StatsCard from "./StatsCard";
-import QuickCheckIn from "./QuickCheckIn";
+import { useState } from "react";
+import { useParams } from "react-router-dom";
+import friendsData from "../../data/friends.json";
+import FriendLeftPanel from "../FriendDetails/left/FriendLeftPanel";
+import FriendRightPanel from "../FriendDetails/right/FriendRightPanel";
 
 const FriendDetails = () => {
+ const { id } = useParams();
 
-  const friend = {
-    name: "Emma Wilson",
-    email: "emma@mail.com",
-    image: "https://i.pravatar.cc/150?img=5"
-  };
+  const friend = friendsData.find(f => f.id === parseInt(id));
+
+  const [timeline, setTimeline] = useState([]);
+
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-10 grid md:grid-cols-3 gap-6">
 
-      {/* LEFT */}
-      <div className="md:col-span-1 space-y-4">
-        <InfoCard friend={friend} />
-      </div>
-
-      {/* RIGHT */}
-      <div className="md:col-span-2 space-y-4">
-        <StatsCard />
-        <QuickCheckIn friend={friend} />
-      </div>
+      <FriendLeftPanel friend={friend} />
+      <FriendRightPanel friend={friend} timeline={timeline} setTimeline={setTimeline} />
 
     </div>
   );
