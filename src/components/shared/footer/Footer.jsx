@@ -19,7 +19,7 @@ const Footer = () => {
         </p>
 
        
-        <p className="text-gray-300 font-semibold text-sm mt-6">
+        <p className="text-gray-200 font-semibold text-sm mt-6">
           Social Links
         </p>
 

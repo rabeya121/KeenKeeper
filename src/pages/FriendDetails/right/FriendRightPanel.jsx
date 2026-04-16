@@ -2,14 +2,16 @@ import { useState, useContext } from "react";
 import toast from "react-hot-toast";
 import { TimelineContext } from "../../../layout/MainLayout";
 import { FiPhone, FiMessageCircle, FiVideo } from "react-icons/fi";
-
+import CallImg from "../../../assets/call.png";
+import TextImg from "../../../assets/text.png";
+import VideoImg from "../../../assets/video.png";
 const FriendRightPanel = ({ friend }) => {
     const { timeline, addToTimeline } = useContext(TimelineContext);
     const friendTimeline = timeline.filter(
         (item) => item.friendId === friend.id
     );
 
-    
+
     const handleAction = (type) => {
         const newEntry = {
             id: Date.now(),
@@ -19,7 +21,7 @@ const FriendRightPanel = ({ friend }) => {
             title: `${type} with ${friend.name}`
         };
 
-        addToTimeline(newEntry); 
+        addToTimeline(newEntry);
         toast.success(`${type} with ${friend.name}`);
     };
 
@@ -29,7 +31,7 @@ const FriendRightPanel = ({ friend }) => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
 
-                
+
                 <div className="bg-white p-5 rounded-xl shadow text-center">
                     <h2 className="text-2xl text-[#244D3F] font-bold">
                         {friend.days_since_contact}
@@ -78,7 +80,7 @@ const FriendRightPanel = ({ friend }) => {
 
             </div>
 
-{/* ===================== Quick Check-In ===================== */}
+            {/* ===================== Quick Check-In ===================== */}
             <div className="bg-white p-5 rounded-xl shadow">
 
                 <h3 className="text-sm font-semibold text-[#244D3F] uppercase mb-4">
@@ -87,12 +89,12 @@ const FriendRightPanel = ({ friend }) => {
 
                 <div className="grid grid-cols-3 gap-4">
 
-                    
+
                     <button
                         onClick={() => handleAction("Call")}
                         className="p-4 bg-gray-100 rounded-xl hover:bg-gray-200 transition flex flex-col items-center justify-center gap-2"
                     >
-                        <FiPhone className="text-2xl font-bold" />
+                        <img src={CallImg} alt="Call" className="w-6 h-6" />
                         <span className="text-sm font-medium">Call</span>
                     </button>
 
@@ -100,16 +102,15 @@ const FriendRightPanel = ({ friend }) => {
                         onClick={() => handleAction("Text")}
                         className="p-4 bg-gray-100 rounded-xl hover:bg-gray-200 transition flex flex-col items-center justify-center gap-2"
                     >
-                        <FiMessageCircle className="text-2xl font-bold" />
+                        <img src={TextImg} alt="Text" className="w-6 h-6" />
                         <span className="text-sm font-medium">Text</span>
                     </button>
 
-                    
                     <button
                         onClick={() => handleAction("Video")}
                         className="p-4 bg-gray-100 rounded-xl hover:bg-gray-200 transition flex flex-col items-center justify-center gap-2"
                     >
-                        <FiVideo className="text-2xl font-bold" />
+                        <img src={VideoImg} alt="Video" className="w-6 h-6" />
                         <span className="text-sm font-medium">Video</span>
                     </button>
 

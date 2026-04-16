@@ -1,13 +1,15 @@
 
 import { useContext, useState } from "react";
 import { TimelineContext } from "../../layout/MainLayout";
-import { FiPhone, FiMessageCircle, FiVideo } from "react-icons/fi";
 import { FaChevronDown, FaCheck } from "react-icons/fa";
 import { useEffect } from "react";
+import CallImg from "../../assets/call.png";
+import TextImg from "../../assets/text.png";
+import VideoImg from "../../assets/video.png";
 
 const Timeline = () => {
 
-   useEffect(() => {
+  useEffect(() => {
     document.title = "Timeline | Keen Keeper";
   }, []);
   const { timeline } = useContext(TimelineContext);
@@ -15,18 +17,21 @@ const Timeline = () => {
   const [filter, setFilter] = useState("All");
 
   const filteredTimeline =
-  filter === "All"
-    ? timeline
-    : timeline.filter((item) => item.type === filter);
+    filter === "All"
+      ? timeline
+      : timeline.filter((item) => item.type === filter);
 
   const getIcon = (type) => {
     switch (type) {
       case "Call":
-        return <FiPhone className="text-xl" />;
+        return <img src={CallImg} alt="Call" className="w-5 h-5" />;
+
       case "Text":
-        return <FiMessageCircle className="text-xl" />;
+        return <img src={TextImg} alt="Text" className="w-5 h-5" />;
+
       case "Video":
-        return <FiVideo className="text-xl" />;
+        return <img src={VideoImg} alt="Video" className="w-5 h-5" />;
+
       default:
         return null;
     }
