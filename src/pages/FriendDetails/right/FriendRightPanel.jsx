@@ -1,10 +1,13 @@
 import { useState, useContext } from "react";
 import toast from "react-hot-toast";
 import { TimelineContext } from "../../../layout/MainLayout";
-import { FiPhone, FiMessageCircle, FiVideo } from "react-icons/fi";
 import CallImg from "../../../assets/call.png";
 import TextImg from "../../../assets/text.png";
 import VideoImg from "../../../assets/video.png";
+
+
+
+
 const FriendRightPanel = ({ friend }) => {
     const { timeline, addToTimeline } = useContext(TimelineContext);
     const friendTimeline = timeline.filter(
@@ -141,10 +144,18 @@ const FriendRightPanel = ({ friend }) => {
                                     <p className="text-xs text-gray-400">{item.date}</p>
                                 </div>
 
-                                <div className="text-xl">
-                                    {item.type === "Call" && <FiPhone />}
-                                    {item.type === "Text" && <FiMessageCircle />}
-                                    {item.type === "Video" && <FiVideo />}
+                                <div className="w-8 h-8 flex items-center justify-center">
+                                    {item.type === "Call" && (
+                                        <img src={CallImg} alt="Call" className="w-5 h-5" />
+                                    )}
+
+                                    {item.type === "Text" && (
+                                        <img src={TextImg} alt="Text" className="w-5 h-5" />
+                                    )}
+
+                                    {item.type === "Video" && (
+                                        <img src={VideoImg} alt="Video" className="w-5 h-5" />
+                                    )}
                                 </div>
                             </div>
                         ))}
