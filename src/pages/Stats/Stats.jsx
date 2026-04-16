@@ -1,5 +1,6 @@
 
 import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer, } from "recharts";
+import { useEffect } from "react";
 
 const data = [
   { name: "Text", value: 40 },
@@ -10,6 +11,9 @@ const data = [
 const COLORS = ["#8B5CF6", "#244D3F", "#22C55E"];
 
 const Stats = () => {
+  useEffect(() => {
+    document.title = "Stats | Keen Keeper";
+  }, []);
   return (
     <div className="bg-white py-12 px-4">
 

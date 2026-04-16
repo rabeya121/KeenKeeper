@@ -3,9 +3,13 @@ import { useParams } from "react-router-dom";
 import friendsData from "../../data/friends.json";
 import FriendLeftPanel from "../FriendDetails/left/FriendLeftPanel";
 import FriendRightPanel from "../FriendDetails/right/FriendRightPanel";
+import { useEffect } from "react";
 
 const FriendDetails = () => {
- const { id } = useParams();
+  useEffect(() => {
+    document.title = "Friend Details | Keen Keeper";
+  }, []);
+  const { id } = useParams();
 
   const friend = friendsData.find(f => f.id === parseInt(id));
 

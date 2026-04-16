@@ -3,8 +3,13 @@ import { useContext, useState } from "react";
 import { TimelineContext } from "../../layout/MainLayout";
 import { FiPhone, FiMessageCircle, FiVideo } from "react-icons/fi";
 import { FaChevronDown, FaCheck } from "react-icons/fa";
+import { useEffect } from "react";
 
 const Timeline = () => {
+
+   useEffect(() => {
+    document.title = "Timeline | Keen Keeper";
+  }, []);
   const { timeline } = useContext(TimelineContext);
 
   const [filter, setFilter] = useState("All");

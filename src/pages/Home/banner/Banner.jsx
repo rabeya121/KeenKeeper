@@ -1,5 +1,6 @@
 import { FaPlus } from "react-icons/fa";
 
+
 const Banner = () => {
   return (
     <div className="bg-base-200 py-16 px-4">
@@ -22,7 +23,6 @@ const Banner = () => {
         </button>
       </div>
 
-      {/* Stats Cards */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10 max-w-4xl mx-auto">
         
         <div className="bg-white p-5 rounded-xl text-center shadow-md hover:shadow-lg transition-shadow duration-300">
