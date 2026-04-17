@@ -51,15 +51,20 @@ const FriendLeftPanel = ({ friend }) => {
         
             <div className="space-y-2">
 
-                <button className="w-full flex items-center justify-center gap-2 py-2 bg-white rounded-lg shadow hover:shadow-md transition text-sm">
+                <button className="w-full flex items-center justify-center
+                 gap-2 py-2 bg-white rounded-lg shadow hover:shadow-md transition text-sm">
                     <FiClock /> Snooze 2 Weeks
                 </button>
 
-                <button className="w-full flex items-center justify-center gap-2 py-2 bg-white rounded-lg shadow hover:shadow-md transition text-sm">
+                <button className="w-full flex items-center justify-center
+                 gap-2 py-2 bg-white rounded-lg shadow hover:shadow-md 
+                 transition text-sm">
                     <FiArchive /> Archive
                 </button>
 
-                <button className="w-full flex items-center justify-center gap-2 py-2 bg-white rounded-lg shadow hover:shadow-md transition text-sm text-red-500">
+                <button className="w-full flex items-center justify-center
+                 gap-2 py-2 bg-white rounded-lg shadow hover:shadow-md 
+                 transition text-sm text-red-500">
                     <FiTrash2 /> Delete
                 </button>
 
