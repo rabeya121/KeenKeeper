@@ -118,17 +118,6 @@
     "bio": "School friend and cricket teammate. Haven't talked in a while.",
     "goal": 14,
     "next_due_date": "2025-07-07"
-  },
-  {
-    "id": 11,
-    "name": "Sabbira Ahmed",
-    "picture": "https://randomuser.me/api/portraits/men/45.jpg",
-    "email": "sabbir.ahmed@gmail.com",
-    "days_since_contact": 20,
-    "status": "on-track",
-    "tags": ["university", "roommate"],
-    "bio": "My university roommate. Now lives abroad, we used to watch movies all night.",
-    "goal": 15,
-    "next_due_date": "2025-07-08"
   }
 ]
+ 
